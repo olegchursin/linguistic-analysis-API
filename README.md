@@ -1,24 +1,38 @@
-# README
+# Linguistic Analysis // API
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## MODELS
 
-Things you may want to cover:
+### User
+**Structure**
+username:string
+email:string
+password_digest:string
 
-* Ruby version
+**Relationships**
+has_many :projects
 
-* System dependencies
 
-* Configuration
+### Project
+**Structure**
+name:string
+description:string
 
-* Database creation
+**Relationships**
+belongs_to :user
+has_many :lexemes
+has_many :texts
 
-* Database initialization
+### Lexeme
+**Structure**
+name:string
 
-* How to run the test suite
+**Relationships**
+belongs_to :project
 
-* Services (job queues, cache servers, search engines, etc.)
 
-* Deployment instructions
+### Text
+**Structure**
+title:string
 
-* ...
+**Relationships**
+belongs_to :project
